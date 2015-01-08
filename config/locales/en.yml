@@ -1,0 +1,10 @@
+--- 
+en:
+  users:
+    email: "Email"
+    password: "Password"
+    remember_me: "Remember me"
+    session: "Sign in"
+    nav-title: "Users"
+  dashboard: "Dashboard"
+  pakages: "Pakages"

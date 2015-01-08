@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @package.reference %>
+</p>
+
+<p>
+  <strong>Track:</strong>
+  <%= @package.track %>
+</p>
+
+<p>
+  <strong>Date received:</strong>
+  <%= @package.date_received %>
+</p>
+
+<%= link_to 'Edit', edit_admin_package_path(@package) %> |
+<%= link_to 'Back', admin_packages_path %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="page-header">Package - <%= @package.reference %></h1>
+
+	<div class="media">
+      <a class="media-left" href="#">
+        <img data-holder-rendered="true" src="data:image/png;base64,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" style="width: 64px; height: 64px;" data-src="holder.js/64x64" alt="64x64">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading"><%= @package.reference %></h4>
+		<table class="table">
+		<thead></thead>
+	      <tbody>
+	        <tr>
+	          <th scope="row">Tracking number</th>
+	          <td><%= @package.track %></td>
+	          <th scope="row">Date received</th>
+	          <td><%= @package.date_received %></td>	
+	          <th scope="row">Status</th>
+	          <td>Delivered / Entregado</td>	                    
+	        </tr>
+	        <tr>
+	          <th scope="row">Weight</th>
+	          <td>97.02</td>
+	          <th scope="row">Sender</th>
+	          <td>Amazon</td>	
+	          <th scope="row">Value</th>
+	          <td>77.32</td>	                    
+	        </tr>	        
+	      </tbody>
+	    </table>
+	    <%= link_to 'Package list', packages_path, :class => 'btn btn-primary' %>
+	    <hr>
+      </div>
+    </div>

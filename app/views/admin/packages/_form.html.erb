@@ -1,0 +1,45 @@
+<%= form_for([:admin, @package]) do |f| %>
+  <% if @package.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@package.errors.count, "error") %> prohibited this package from being saved:</h2>
+
+      <ul>
+      <% @package.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :reference %><br>
+    <%= f.text_field :reference, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :track %><br>
+    <%= f.text_field :track, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :height %><br>
+    <%= f.text_field :height, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :width %><br>
+    <%= f.text_field :width, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :length %><br>
+    <%= f.text_field :length, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight, class: 'form-control' %>
+  </div>        
+  <div class="form-group form-inline">
+    <%= f.label :date_received %><br>
+    <%= f.datetime_select :date_received, {}, { class: "form-control" } %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Save', :class => 'btn btn-primary' %>
+  </div>
+<% end %>
