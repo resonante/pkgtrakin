@@ -1,4 +1,6 @@
-<%= form_for(@status) do |f| %>
+<div class="modal-body">
+
+<%= form_for([:admin, @status]) do |f| %>
   <% if @status.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@status.errors.count, "error") %> prohibited this status from being saved:</h2>
@@ -11,19 +13,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <%= f.hidden_field :package_id, value: @package.id %>
+
+  <div class="form-group form-inline">
     <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
+    <%= f.datetime_select :date, {}, { class: "form-control" } %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.text_field :status, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :comments %><br>
-    <%= f.text_area :comments %>
+    <%= f.text_area :comments, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <%= f.submit 'Create Status', :class => 'btn btn-primary' %>
+</div>  
 <% end %>

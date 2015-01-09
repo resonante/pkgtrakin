@@ -8,3 +8,4 @@
 user = User.create(email: "wizard.resonant@gmail.com", password: "cricket79", :language => 'en')
 Assignment.create(role: Role.create(name: "Administrator"), user: user)
 Role.create(name: "User")
+Sender.create(name: "Amazon", description: "Amazon.com")

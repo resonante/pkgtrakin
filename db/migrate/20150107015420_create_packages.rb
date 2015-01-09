@@ -5,7 +5,7 @@ class CreatePackages < ActiveRecord::Migration
       t.string :track
       t.datetime :date_received
       t.belongs_to :user
-      t.text :sender
+      t.belongs_to :sender
       t.decimal :height
       t.decimal :width
       t.decimal :length

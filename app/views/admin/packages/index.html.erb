@@ -1,17 +1,8 @@
-<script>
-  function actionsFormatter(value) {
-    var actions = '';
-    actions += '<a style="padding-right:12px;" href="/admin/packages/' + value + '"><i class="glyphicon glyphicon-eye-open"></i></a>';
-    actions += '<a style="padding-right:12px;" href="/admin/packages/' + value + '/edit"><i class="glyphicon glyphicon-pencil"></i></a>';
-    actions += '<a style="padding-right:12px;" href="/admin/packages/' + value + '"><i class="glyphicon glyphicon-trash"></i></a>';
-    return actions;
-  }
-</script>
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'New Package', new_admin_package_path, :class => 'btn btn-primary' %>
 
-<h1>Listing Packages</h1>
+<h1 class="page-header" style="padding-top:24px;">Listing Packages</h1>
 
 <table data-toggle="table"
        data-classes="table table-hover table-striped"
@@ -30,3 +21,12 @@
     </tr>
     </thead>
 </table>
+<script>
+function actionsFormatter(value) {
+  var actions = '';
+  actions += '<a style="padding-right:12px;" href="/admin/packages/' + value + '"><i class="glyphicon glyphicon-eye-open"></i></a>';
+  actions += '<a style="padding-right:12px;" href="/admin/packages/' + value + '/edit"><i class="glyphicon glyphicon-pencil"></i></a>';
+  actions += '<a style="padding-right:12px;" href="/admin/packages/' + value + '"><i class="glyphicon glyphicon-trash"></i></a>';
+  return actions;
+}
+</script>

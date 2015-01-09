@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'New Sender', new_admin_sender_path, :class => 'btn btn-primary' %>
+
+<h1>Listing Senders</h1>
+
+<table data-toggle="table"
+       data-classes="table table-hover table-striped"
+       data-sort-name="date_received"
+       data-sort-order="desc"
+       data-url="/admin/senders"
+       data-pagination="true"
+       data-search="true"
+       data-height="500">
+    <thead>
+    <tr>
+        <th data-field="name" data-sortable="true">Name</th>
+        <th data-field="description" data-sortable="true">Description</th>
+        <th data-field="id" data-formatter="actionsFormatter">Actions</th>
+    </tr>
+    </thead>
+</table>
+<script>
+function actionsFormatter(value) {
+  var actions = '';
+  actions += '<a style="padding-right:12px;" href="/admin/senders/' + value + '"><i class="glyphicon glyphicon-eye-open"></i></a>';
+  actions += '<a style="padding-right:12px;" href="/admin/senders/' + value + '/edit"><i class="glyphicon glyphicon-pencil"></i></a>';
+  actions += '<a style="padding-right:12px;" href="/admin/senders/' + value + '"><i class="glyphicon glyphicon-trash"></i></a>';
+  return actions;
+}
+</script>

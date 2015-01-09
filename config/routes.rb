@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :senders
   resources :roles
   resources :statuses
   resources :packages
@@ -62,6 +63,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'welcome#index'
     resources :packages
+    resources :statuses
+    resources :senders
+    resources :roles
     resources :users
   end
 

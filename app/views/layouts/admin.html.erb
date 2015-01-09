@@ -56,6 +56,7 @@
           <ul class="nav nav-sidebar">
             <li <% if controller_name == 'welcome' %>class="active"<% end %>><a href="/admin"><%= t('dashboard') %> <span class="sr-only">(current)</span></a></li>
             <li <% if controller_name == 'packages' %>class="active"<% end %>><a href="/admin/packages"><%= t('packages') %></a></li>
+            <li <% if controller_name == 'senders' %>class="active"<% end %>><a href="/admin/senders"><%= t('senders') %></a></li>
             <li <% if controller_name == 'users' %>class="active"<% end %>><a href="/admin/users"><%= t('users.nav-title') %></a></li>
             <li <% if controller_name == 'settings' %>class="active"<% end %>><a href="/settings"><%= t('settings') %></a></li>
           </ul>          

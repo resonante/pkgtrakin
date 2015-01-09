@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107235132) do
+ActiveRecord::Schema.define(version: 20150109052000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150107235132) do
     t.string   "track"
     t.datetime "date_received"
     t.integer  "user_id"
-    t.text     "sender"
+    t.integer  "sender_id"
     t.decimal  "height"
     t.decimal  "width"
     t.decimal  "length"
@@ -42,6 +42,13 @@ ActiveRecord::Schema.define(version: 20150107235132) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "senders", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "statuses", force: :cascade do |t|

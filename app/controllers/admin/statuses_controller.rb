@@ -23,7 +23,7 @@ class Admin::StatusesController < ApplicationController
   def create
     @status = Status.new(status_params)
     flash[:notice] = 'Status was successfully created.' if @status.save
-    respond_with(@status)
+    respond_with(:admin, @status.package)
   end
 
   def update
@@ -42,6 +42,6 @@ class Admin::StatusesController < ApplicationController
     end
 
     def status_params
-      params.require(:status).permit(:date, :status, :comments)
+      params.require(:status).permit(:package_id, :date, :status, :comments)
     end
 end

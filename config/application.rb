@@ -27,6 +27,7 @@ module Pkgtrackin
       Devise::SessionsController.layout "sessions"
       Admin::WelcomeController.layout "admin"
       Admin::PackagesController.layout "admin"
+      Admin::SendersController.layout "admin"
       Admin::UsersController.layout "admin"
     end
         
