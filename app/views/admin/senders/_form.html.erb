@@ -1,5 +1,7 @@
-<%= form_for(@sender) do |f| %>
+<%= form_for([:admin, @sender]) do |f| %>
   <% if @sender.errors.any? %>
+  <div class="alert alert-danger alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>  
     <div id="error_explanation">
       <h2><%= pluralize(@sender.errors.count, "error") %> prohibited this sender from being saved:</h2>
 
@@ -9,17 +11,18 @@
       <% end %>
       </ul>
     </div>
+  </div>  
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit 'Save', :class => 'btn btn-primary' %>
   </div>
 <% end %>

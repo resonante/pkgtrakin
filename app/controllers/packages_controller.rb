@@ -9,6 +9,7 @@ class PackagesController < ApplicationController
   end
 
   def show
+    @statuses = @package.statuses.order(date: :desc)    
     respond_with(@package)
   end
 

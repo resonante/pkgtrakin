@@ -1,0 +1,58 @@
+<% if notice -%>
+<div class="bs-component">
+  <div class="alert alert-dismissable alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+      <%= notice %>
+    </div>
+</div>
+<% end -%>
+<h1 class="page-header">Account</h1>
+
+<div class="form-group">
+<%= link_to 'Edit Account', edit_profile_path(@profile), :class => 'btn btn-primary' %>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @profile.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @profile.phone %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @profile.mobile %>
+</p>
+
+<p>
+  <strong>Fax:</strong>
+  <%= @profile.fax %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @profile.zipcode %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @profile.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @profile.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @profile.country %>
+</p>

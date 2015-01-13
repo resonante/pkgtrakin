@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :profiles
+
   resources :senders
   resources :roles
   resources :statuses
@@ -67,6 +69,7 @@ Rails.application.routes.draw do
     resources :senders
     resources :roles
     resources :users
+    resources :settings
   end
 
 end

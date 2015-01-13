@@ -32,12 +32,17 @@ class Admin::PackagesController < ApplicationController
     if @package.save
       Status.create(package_id: @package.id, date: @package.date_received, status: 'Received / Recibido', comments: 'No Comments')
       flash[:notice] = 'Package was successfully created.'
+    else
+      @users = User.all
+      @senders = Sender.all  
     end
     respond_with(:admin, @package)
   end
 
   def update
     flash[:notice] = 'Package was successfully updated.' if @package.update(package_params)
+    @users = User.all
+    @senders = Sender.all     
     respond_with(:admin, @package)
   end
 

@@ -25,10 +25,13 @@ module Pkgtrackin
 
     config.to_prepare do
       Devise::SessionsController.layout "sessions"
+      Devise::RegistrationsController.layout "sessions"
+      Devise::PasswordsController.layout "sessions"
       Admin::WelcomeController.layout "admin"
       Admin::PackagesController.layout "admin"
       Admin::SendersController.layout "admin"
       Admin::UsersController.layout "admin"
+      Admin::SettingsController.layout "admin"
     end
         
   end

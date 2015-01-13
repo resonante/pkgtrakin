@@ -42,16 +42,19 @@
 
 <%= form_for([:admin, @package]) do |f| %>
   <% if @package.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@package.errors.count, "error") %> prohibited this package from being saved:</h2>
+  <div class="alert alert-danger alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>  
+      <div id="error_explanation">
+        <h2><%= pluralize(@package.errors.count, "error") %> prohibited this package from being saved:</h2>
 
-      <ul>
-      <% @package.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <ul>
+        <% @package.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>  
+    <% end %>
 
   <div class="panel panel-default">
     <div class="panel-heading">

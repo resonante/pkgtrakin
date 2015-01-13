@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user = User.create(email: "wizard.resonant@gmail.com", password: "cricket79", :language => 'en')
+Profile.create(user: user)
 Assignment.create(role: Role.create(name: "Administrator"), user: user)
 Role.create(name: "User")
 Sender.create(name: "Amazon", description: "Amazon.com")

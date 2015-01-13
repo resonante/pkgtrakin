@@ -34,7 +34,7 @@
           <ul class="nav nav-pills pull-right">
             <li role="presentation" <% if controller_name == 'welcome' %>class="active"<% end %>><a href="/">Home</a></li>
             <li role="presentation" <% if controller_name == 'packages' %>class="active"<% end %>><a href="/packages">Packages</a></li>
-            <li role="presentation" <% if controller_name == 'users' %>class="active"<% end %>><a href="/profile">Account</a></li>
+            <li role="presentation" <% if controller_name == 'profiles' %>class="active"<% end %>><a href="/profiles/<%= current_user.profile.id %>/edit">Account</a></li>
             <li role="presentation"><a href="<%= destroy_user_session_path %>">Logout</a></li>
           </ul>
         </nav>
