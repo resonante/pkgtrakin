@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Setting.create(company_name: "DoralXport")
 user = User.create(email: "wizard.resonant@gmail.com", password: "cricket79", :language => 'en')
 Profile.create(user: user)
 Assignment.create(role: Role.create(name: "Administrator"), user: user)
