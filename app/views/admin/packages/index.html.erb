@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% if (notice) %><p id="notice"><%= notice %></p><% end %>
 
-<%= link_to 'New Package', new_admin_package_path, :class => 'btn btn-primary' %>
-
-<h1 class="page-header" style="padding-top:24px;">Packages</h1>
-
+<h1 class="page-header"><%= t('packages.title') %></h1>
+<div id="toolbar">
+    <%= link_to t('packages.new'), new_admin_package_path, :class => 'btn btn-primary' %>
+</div>
 <table data-toggle="table"
        data-classes="table table-hover table-striped"
        data-sort-name="date_received"
@@ -11,13 +11,14 @@
        data-url="/admin/packages"
        data-pagination="true"
        data-search="true"
-       data-height="500">
+       data-height="500"
+       data-toolbar="#toolbar">
     <thead>
     <tr>
-        <th data-field="reference" data-sortable="true">Reference</th>
-        <th data-field="track" data-sortable="true">Track</th>
-        <th data-field="date_received" data-sortable="true">Date received</th>
-        <th data-field="id" data-formatter="actionsFormatter">Actions</th>
+        <th data-field="reference" data-sortable="true"><%= t('packages.reference') %></th>
+        <th data-field="track" data-sortable="true"><%= t('packages.track') %></th>
+        <th data-field="date_received" data-sortable="true"><%= t('packages.date_received') %></th>
+        <th data-field="id" data-formatter="actionsFormatter"><%= t('actions.title') %></th>
     </tr>
     </thead>
 </table>

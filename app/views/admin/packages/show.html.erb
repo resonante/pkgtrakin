@@ -5,20 +5,20 @@
 </div>
 <% end %>
 
-<h1 class="page-header">Package <%= @package.reference %></h1>
+<h1 class="page-header"><%= t('packages.title').chop %> / <%= @package.reference %></h1>
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Status</h3>
+      <h3 class="panel-title"><%= t('packages.status') %></h3>
     </div>
     <div class="panel-body">
     </div>
     <table class="table">
         <thead>
           <tr>
-            <th>Date</th>        
-            <th>Status</th>
-            <th>Comments</th>                      
+            <th><%= t('packages.date_status') %></th>        
+            <th><%= t('packages.status') %></th>
+            <th><%= t('packages.status_comments') %></th>                      
           </tr>          
         </thead>
         <tbody>
@@ -35,7 +35,7 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Receiver</h3>
+      <h3 class="panel-title"><%= t('users.reciver') %></h3>
     </div>
     <div class="panel-body">
       <div class="row">
@@ -54,7 +54,7 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Sender</h3>
+      <h3 class="panel-title"><%= t('senders.sender') %></h3>
     </div>
     <div class="panel-body">
       <div class="row">
@@ -73,7 +73,7 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Package</h3>
+      <h3 class="panel-title"><%= t('packages.title').chop %></h3>
     </div>
     <div class="panel-body">
     	
@@ -82,25 +82,25 @@
 	<thead></thead>
       <tbody>
         <tr>
-          <th scope="row">Reference</th>
+          <th scope="row"><%= t('packages.reference') %></th>
           <td><%= @package.reference %></td>        
-          <th scope="row">Tracking number</th>
+          <th scope="row"><%= t('packages.track') %></th>
           <td><%= @package.track %></td>
-          <th scope="row">Date received</th>
+          <th scope="row"><%= t('packages.date_received') %></th>
           <td><%= @package.date_received %></td>	                    
         </tr>
         <tr>
-          <th scope="row">Height</th>
+          <th scope="row"><%= t('packages.height') %></th>
           <td><%= @package.height %></td>
-          <th scope="row">Width</th>
+          <th scope="row"><%= t('packages.width') %></th>
           <td><%= @package.width %></td>	
-          <th scope="row">Length</th>
+          <th scope="row"><%= t('packages.length') %></th>
           <td><%= @package.length %></td>	                    
         </tr>	
         <tr>
-          <th scope="row">Weight</th>
+          <th scope="row"><%= t('packages.weight') %></th>
           <td><%= @package.weight %></td>
-          <th scope="row">Description</th>
+          <th scope="row"><%= t('packages.description') %></th>
           <td><%= @package.description %></td>  
           <th scope="row">Value</th>
           <td><%= @package.length %></td>                     
@@ -109,5 +109,5 @@
     </table>    
   </div>
 
-<%= link_to 'Edit', edit_admin_package_path(@package) %> |
-<%= link_to 'Back', admin_packages_path %>
+<%= link_to t('actions.edit'), edit_admin_package_path(@package) %> |
+<%= link_to t('actions.back'), admin_packages_path %>

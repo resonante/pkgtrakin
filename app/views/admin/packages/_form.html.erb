@@ -1,17 +1,17 @@
   <% if action_name == 'edit' -%>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Status</h3>
+      <h3 class="panel-title"><%= t('packages.status') %></h3>
     </div>
     <div class="panel-body">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">New Status</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><%= t('packages.new_status') %></button>
     </div>
     <table class="table">
         <thead>
           <tr>
-            <th>Date</th>        
-            <th>Status</th>
-            <th>Comments</th>                      
+            <th><%= t('packages.date_status') %></th>        
+            <th><%= t('packages.status') %></th>
+            <th><%= t('packages.status_comments') %></th>                      
           </tr>          
         </thead>
         <tbody>
@@ -32,7 +32,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">New Status</h4>
+          <h4 class="modal-title" id="myModalLabel"><%= t('packages.new_status') %></h4>
         </div>
         <%= render partial: 'admin/statuses/form' %>
       </div>
@@ -58,13 +58,13 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Receiver</h3>
+      <h3 class="panel-title"><%= t('users.reciver') %></h3>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <%= f.label 'Receiver' %><br>
+            <%= f.label t('users.select_reciver') %><br>
             <%= f.select(:user_id, {}, {}, { class: 'form-control' }) do %>
               <% @users.each do |u| -%>
                 <% if u.id == @package.user_id -%>
@@ -86,13 +86,13 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Sender</h3>
+      <h3 class="panel-title"><%= t('senders.sender') %></h3>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <%= f.label 'Name' %><br>
+            <%= f.label t('senders.select_sender') %><br>
             <%= f.select(:sender_id, {}, {}, { class: 'form-control' }) do %>
               <% @senders.each do |s| -%>
                 <% if s.id == @package.sender_id -%>
@@ -114,19 +114,19 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Package</h3>
+      <h3 class="panel-title"><%= t('packages.title').chop %></h3>
     </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <%= f.label :reference %><br>
+            <%= f.label t('packages.reference') %><br>
             <%= f.text_field :reference, class: 'form-control' %>
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
-            <%= f.label :track %><br>
+            <%= f.label t('packages.track') %><br>
             <%= f.text_field :track, class: 'form-control' %>
           </div>
         </div>
@@ -135,13 +135,13 @@
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <%= f.label :height %><br>
+            <%= f.label t('packages.height') %><br>
             <%= f.text_field :height, class: 'form-control' %>
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
-            <%= f.label :width %><br>
+            <%= f.label t('packages.width') %><br>
             <%= f.text_field :width, class: 'form-control' %>
           </div>
         </div>
@@ -150,13 +150,13 @@
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <%= f.label :length %><br>
+            <%= f.label t('packages.length') %><br>
             <%= f.text_field :length, class: 'form-control' %>
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
-            <%= f.label :weight %><br>
+            <%= f.label t('packages.weight') %><br>
             <%= f.text_field :weight, class: 'form-control' %>
           </div>  
         </div>
@@ -165,13 +165,13 @@
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <%= f.label :description %><br>
+            <%= f.label t('packages.description') %><br>
             <%= f.text_area :description, class: 'form-control' %>
           </div> 
         </div>
         <div class="col-xs-6">
           <div class="form-group form-inline">
-            <%= f.label :date_received %><br>
+            <%= f.label t('packages.date_received') %><br>
             <%= f.datetime_select :date_received, {}, { class: "form-control" } %>
           </div>
         </div>
@@ -180,7 +180,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit 'Save', :class => 'btn btn-primary' %>
+    <%= f.submit t('actions.save'), :class => 'btn btn-primary' %>
   </div>
 <% end %>
 

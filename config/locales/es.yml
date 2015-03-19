@@ -1,0 +1,105 @@
+--- 
+es:
+  users:
+   email: "Correo electrónico"
+   password: "Contraseña"
+   remember_me: "Recordarme"
+   session: "Iniciar sesión"
+   nav-title: "Usuarios"
+   reciver: "Destinatario"
+   logout: "Cerrar sesión"
+   select_reciver: "Selecciona un destinatario"
+   new: "Nuevo Usuario"
+   edit: "Editar Usuario"
+   delete: "Eliminar Usuario"   
+   profile: "Mi perfil"
+  dashboard:
+   title: "Escritorio"
+  packages:
+   title: "Paquetes"
+   new: "Nuevo Paquete"
+   edit: "Editar Paquete"
+   delete: "Eliminar Paquete"
+   reference: "Referencia"
+   track: "Número de rastreo"
+   date_received: "Recibido"
+   height: "Alto"
+   width: "Ancho"
+   length: "Largo"
+   weight: "Peso"
+   description: "Descripción"
+   status: "Status"
+   new_status: "Nuevo status"
+   date_status: "Fecha"
+   status_comments: "Comentarios" 
+   create_status: "Crear status"
+   close: "Cerrar"
+  senders:
+   title: "Remitentes"
+   sender: "Remitente"
+   select_sender: "Selecciona un remitente"
+   new: "Nuevo Remitente"
+   edit: "Editar Remitente"
+   delete: "Eliminar Remitente"   
+   name: "Nombre"
+   description: "Descripción"
+  settings:
+   title: "Configuraciones"
+  actions:
+   title: "Acciones"
+   save: "Guardar"
+   edit: "Editar"
+   back: "Volver"
+  date:
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mié
+    - jue
+    - vie
+    - sáb
+    abbr_month_names:
+    - 
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    day_names:
+    - domingo
+    - lunes
+    - martes
+    - miércoles
+    - jueves
+    - viernes
+    - sábado
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %b"
+    month_names:
+    - 
+    - enero
+    - febrero
+    - marzo
+    - abril
+    - mayo
+    - junio
+    - julio
+    - agosto
+    - septiembre
+    - octubre
+    - noviembre
+    - diciembre
+    order:
+    - :day
+    - :month
+    - :year 

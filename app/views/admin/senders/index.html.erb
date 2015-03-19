@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% if (notice) %><p id="notice"><%= notice %></p><% end %>
 
-<%= link_to 'New Sender', new_admin_sender_path, :class => 'btn btn-primary' %>
-
-<h1 class="page-header" style="padding-top:24px;">Senders</h1>
-
+<h1 class="page-header"><%= t('senders.title') %></h1>
+<div id="toolbar">
+    <%= link_to t('senders.new'), new_admin_sender_path, :class => 'btn btn-primary' %>
+</div>
 <table data-toggle="table"
        data-classes="table table-hover table-striped"
        data-sort-name="date_received"
@@ -11,12 +11,13 @@
        data-url="/admin/senders"
        data-pagination="true"
        data-search="true"
-       data-height="500">
+       data-height="500"
+       data-toolbar="#toolbar">
     <thead>
     <tr>
-        <th data-field="name" data-sortable="true">Name</th>
-        <th data-field="description" data-sortable="true">Description</th>
-        <th data-field="id" data-formatter="actionsFormatter">Actions</th>
+        <th data-field="name" data-sortable="true"><%= t('senders.name') %></th>
+        <th data-field="description" data-sortable="true"><%= t('senders.description') %></th>
+        <th data-field="id" data-formatter="actionsFormatter"><%= t('actions.title') %></th>
     </tr>
     </thead>
 </table>

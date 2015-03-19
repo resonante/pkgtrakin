@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
     <link rel="icon" href="../../favicon.ico">
 
-    <title>PkgTracking</title>
+    <title><%= company_name %></title>
 
     <!-- Bootstrap core CSS -->
     <link href="/assets/bootstraplumen.min.css" rel="stylesheet">
@@ -32,19 +32,19 @@
       <div class="header">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" <% if controller_name == 'welcome' %>class="active"<% end %>><a href="/">Home</a></li>
-            <li role="presentation" <% if controller_name == 'packages' %>class="active"<% end %>><a href="/packages">Packages</a></li>
-            <li role="presentation" <% if controller_name == 'profiles' %>class="active"<% end %>><a href="/profiles/<%= current_user.profile.id %>/edit">Account</a></li>
-            <li role="presentation"><a href="<%= destroy_user_session_path %>">Logout</a></li>
+            <li role="presentation" <% if controller_name == 'welcome' %>class="active"<% end %>><a href="/"><%= t('dashboard.title') %></a></li>
+            <li role="presentation" <% if controller_name == 'packages' %>class="active"<% end %>><a href="/packages"><%= t('packages.title') %></a></li>
+            <li role="presentation" <% if controller_name == 'profiles' %>class="active"<% end %>><a href="/profiles/<%= current_user.profile.id %>/edit"><%= t('users.profile') %></a></li>
+            <li role="presentation"><a href="<%= destroy_user_session_path %>"><%= t('users.logout') %></a></li>
           </ul>
         </nav>
-        <h3 class="text-muted">PkgTracking</h3>
+        <h3 class="text-muted"><%= company_name %></h3>
       </div>
 
       <%= yield %>
 
       <footer class="footer">
-        <p>&copy; PkgTracking 2015</p>
+        <p>&copy; <%= company_name %> 2015</p>
       </footer>
 
     </div> <!-- /container -->

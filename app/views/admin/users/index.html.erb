@@ -7,12 +7,12 @@
     return actions;
   }
 </script>
-<p id="notice"><%= notice %></p>
+<% if (notice) %><p id="notice"><%= notice %></p><% end %>
 
-<%= link_to 'New User', new_admin_user_path, :class => 'btn btn-primary' %>
-
-<h1 class="page-header" style="padding-top:24px;">Users</h1>
-
+<h1 class="page-header"><%= t('users.nav-title') %></h1>
+<div id="toolbar">
+    <%= link_to t('users.new'), new_admin_user_path, :class => 'btn btn-primary' %>
+</div>
 <table data-toggle="table"
        data-classes="table table-hover table-striped"
        data-sort-name="email"
@@ -20,11 +20,12 @@
        data-url="/admin/users"
        data-pagination="true"
        data-search="true"
-       data-height="500">
+       data-height="500"
+       data-toolbar="#toolbar">
     <thead>
     <tr>
-        <th data-field="email" data-sortable="true">Email</th>
-        <th data-field="id" data-formatter="actionsFormatter">Actions</th>
+        <th data-field="email" data-sortable="true"><%= t('users.email') %></th>
+        <th data-field="id" data-formatter="actionsFormatter"><%= t('actions.title') %></th>
     </tr>
     </thead>
 </table>
